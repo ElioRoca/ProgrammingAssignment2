@@ -1,30 +1,29 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## prototipe object in RAM memory
-
-makeVector <- function(x = numeric()) {
+## looks for inverse matrix in cache or solve it
+#USAGE: cacheSolve(makeCacheMatrix(a)), where a is a matrix
+#creates matrix
+makeCacheMatrix <- function(x = matrix()) {
         m <- NULL
         set <- function(y) {
                 x <<- y
                 m <<- NULL
         }
         get <- function() x
-        setmean <- function(mean) m <<- mean
-        getmean <- function() m
+        setinverse <- function(solve) m <<- solve
+        getinverse <- function() m
         list(set = set, get = get,
-             setmean = setmean,
-             getmean = getmean)
+             setinverse = setinverse,
+             getinverse = getinverse)
 }
-                
-
-makeCacheMatrix <- function(x = matrix()) {
-
-}
-
-
-## Write a short comment describing this function
-
+##  look inverse in cache or solve matrix
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
+         m <- x$getinverse()
+  if(!is.null(m)) {
+    message("getting cached data")
+    return(m)
+  }
+  data <- x$get()
+  m<- solve(data, ...)
+  x$setinverse(m)
+  m
 }
