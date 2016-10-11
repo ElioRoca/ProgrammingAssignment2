@@ -1,3 +1,6 @@
+##R Programming
+by Roger D. Peng <rdpeng@jhu.edu>, University Johns Hopkins
+
 ### Introduction
 
 This second programming assignment will require you to write an R
