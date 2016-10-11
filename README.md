@@ -1,4 +1,4 @@
-##R Programming
+##R Programming, second programming assignment
 by Roger D. Peng <rdpeng@jhu.edu>, University Johns Hopkins
 
 ### Introduction
